@@ -2,8 +2,9 @@
   "name": "koa2learning",
   "version": "1.0.0",
   "description": "",
-  "main": "cb-promise.js",
+  "main": "src/cb-promise.js",
   "scripts": {
+    "dev": "nodemon -w src --exec \"babel-node src --presets env\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/jptwl/koa2Learning/issues"
   },
-  "homepage": "https://github.com/jptwl/koa2Learning#readme"
+  "homepage": "https://github.com/jptwl/koa2Learning#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^1.18.9"
+  },
+  "dependencies": {}
 }
