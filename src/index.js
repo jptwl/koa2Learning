@@ -1,5 +1,5 @@
 // import {promisify} from 'util'
-// import {resolve as r} from 'path'
+import {resolve as r} from 'path'
 // import {readFile, writeFileSync as wfs} from 'fs'
 // import * as qs from 'querystring'
 //
@@ -14,6 +14,23 @@
 
 
 import { name, getName} from './ex'
+import {promisify} from 'util'
+import {readFile} from 'fs'
+
+
 
 console.log(name);
 console.log(getName());
+
+
+const readAsync = promisify(readFile);
+
+async function init() {
+    let data = await  readAsync(r(__dirname,'../package.json'));
+
+    data = JSON.parse(data);
+
+    console.log(data.name)
+}
+
+init();
